@@ -1,0 +1,20 @@
+.why-choose-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.why-choose-card::before {
+    content: "";
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color-primary);
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.why-choose-card:hover:before {
+    width: 100%;
+}

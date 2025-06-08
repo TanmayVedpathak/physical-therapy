@@ -1,0 +1,22 @@
+.blog-image {
+    position: relative;
+}
+
+.blog-card:hover .blog-image::before {
+    opacity: 1;
+}
+
+.blog-image::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: rgba(21, 185, 217, .3);
+    opacity: 0;
+    transition: 0.5s;
+    z-index: 5;
+}

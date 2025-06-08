@@ -1,0 +1,41 @@
+.testimonial-carousel .carousel.carousel-slider {
+    padding-bottom: 50px;
+}
+
+
+.testimonial-carousel .carousel .control-dots {
+    padding: 0;
+    bottom: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.testimonial-carousel .carousel .control-dots .dot {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    margin: 0 6px;
+    box-shadow: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.testimonial-carousel .carousel .control-dots .dot::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.testimonial-carousel .carousel .control-dots .dot.selected {
+    background: #f47c59;
+    border-color: white;
+}
