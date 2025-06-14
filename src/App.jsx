@@ -5,7 +5,18 @@ import {
   useLocation,
   matchRoutes,
 } from "react-router-dom";
-import { About, Appointment, ContactUs, Home, NotFound404, Services } from "./pages";
+import {
+  About,
+  Appointment,
+  Blog,
+  ContactUs,
+  Feature,
+  Home,
+  NotFound404,
+  Services,
+  Team,
+  Testimonial,
+} from "./pages";
 import { BlueHeader, Footer, Navbar, ScrollToTop } from "./components";
 import "./App.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -37,10 +48,10 @@ function AppRoutes() {
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/appointment" element={<Appointment />} />
-        <Route path="/feature" element={<Appointment />} />
-        <Route path="/blog" element={<Appointment />} />
-        <Route path="/team" element={<Appointment />} />
-        <Route path="/testimonial" element={<Appointment />} />
+        <Route path="/feature" element={<Feature />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/team" element={<Team />} />
+        <Route path="/testimonial" element={<Testimonial />} />
         <Route path="*" element={<NotFound404 />} />
       </Routes>
       {isKnownRoute && <Footer />}

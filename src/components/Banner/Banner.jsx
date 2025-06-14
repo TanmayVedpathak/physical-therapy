@@ -53,14 +53,8 @@ const Banner = ({
         )}
 
         {buttonText && (
-          <Link
-            to={buttonLink}
-            className="common-button"
-          >
-            <span>
-
-            {buttonText}
-            </span>
+          <Link to={buttonLink} className="common-button">
+            <span>{buttonText}</span>
           </Link>
         )}
       </div>

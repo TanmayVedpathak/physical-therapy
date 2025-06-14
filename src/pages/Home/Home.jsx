@@ -29,10 +29,15 @@ const Home = () => {
       <ServicesSection serviceSection={serviceSection} />
       <AboutSection aboutSection={aboutSection} />
       <WhyChooseUs whyChooseUsSection={whyChooseUsSection} />
-      <ContactSection contactSection={contactSection} setIsModalOpen={setIsModalOpen} />
-      <YouTubeModal videoId="dQw4w9WgXcQ"
+      <ContactSection
+        contactSection={contactSection}
+        setIsModalOpen={setIsModalOpen}
+      />
+      <YouTubeModal
+        videoId="dQw4w9WgXcQ"
         isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)} />
+        onClose={() => setIsModalOpen(false)}
+      />
       <TeamSection teamSection={teamSection} />
       <TestimonialCarousel testimonialSection={testimonialSection} />
       <BlogSection blogSection={blogSection} />

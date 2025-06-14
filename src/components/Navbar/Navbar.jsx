@@ -8,12 +8,6 @@ const Navbar = () => {
   const [showPopup, setIShowPopup] = useState(false);
   const [slideDown, setSlideDown] = useState(false);
 
-  const handleMouseEnter = (active) => {
-    if (window.screen.width > 1024) {
-      setIShowPopup(active);
-    }
-  };
-
   const handlePageClick = () => {
     if (window.screen.width < 1024) {
       setIShowPopup(!showPopup);
@@ -71,32 +65,6 @@ const Navbar = () => {
           >
             About
           </NavLink>
-          <div className="relative w-[100%] lg:w-auto">
-            <p
-              className={`text-base font-normal py-2 lg:py-5 lg:border-b-2  lg:border-transparent hover:lg:border-primary text-[var(--text-gray)] flex items-center gap-2 w-max lg:w-auto ${
-                showPopup ? "text-primary lg:border-primary" : ""
-              }`}
-              onMouseEnter={() => handleMouseEnter(true)}
-              onMouseLeave={() => handleMouseEnter(false)}
-              onClick={handlePageClick}
-            >
-              Pages <IoIosArrowDown />
-            </p>
-
-            <div
-              className={`flex flex-col gap-1.5 w-[100%] lg:w-auto static lg:absolute transition-all duration-300 ease-in-out shadow-lg z-[999] bg-white border rounded-xl border-[var(--text-gray)] lg:border-none ${
-                showPopup
-                  ? "max-h-[500px] block opacity-100 p-2"
-                  : "max-h-[0px] hidden opacity-0"
-              }`}
-            >
-              <NavLink to="/appointment">Appointment</NavLink>
-              <NavLink to="/feature">Features</NavLink>
-              <NavLink to="/blog">Our Blog</NavLink>
-              <NavLink to="/team">Our Team</NavLink>
-              <NavLink to="/testimonial">Testimonial</NavLink>
-            </div>
-          </div>
           <NavLink
             to="/services"
             className={({ isActive }) =>
@@ -109,6 +77,45 @@ const Navbar = () => {
           >
             Sevices
           </NavLink>
+          <div className="group relative w-[100%] lg:w-auto">
+            <p
+              className="text-base font-normal py-2 lg:py-5 lg:border-b-2  lg:border-transparent hover:lg:border-primary text-[var(--text-gray)] flex items-center gap-2 w-max lg:w-auto group-hover:text-primary group-hover:lg:border-primary"
+              onClick={handlePageClick}
+            >
+              Pages <IoIosArrowDown />
+            </p>
+
+            <div
+              className={` flex-col gap-1.5 w-[100%] lg:w-auto static lg:absolute transition-all duration-300 ease-in-out shadow-lg z-[999] bg-white border rounded-xl border-[var(--text-gray)] lg:border-none max-h-[0px] overflow-hidden hidden group-hover:max-h-[500px] group-hover:flex ${
+                showPopup ? "max-h-[500px]" : "max-h-[0px]"
+              }`}
+            >
+              <NavLink
+                to="/appointment"
+                className="hover:text-white hover:bg-primary px-4 py-2"
+              >
+                Appointment
+              </NavLink>
+              <NavLink
+                to="/feature"
+                className="hover:text-white hover:bg-primary px-4 py-2"
+              >
+                Features
+              </NavLink>
+              <NavLink to="/blog" className="hover:text-white hover:bg-primary px-4 py-2">
+                Our Blog
+              </NavLink>
+              <NavLink to="/team" className="hover:text-white hover:bg-primary px-4 py-2">
+                Our Team
+              </NavLink>
+              <NavLink
+                to="/testimonial"
+                className="hover:text-white hover:bg-primary px-4 py-2"
+              >
+                Testimonial
+              </NavLink>
+            </div>
+          </div>
           <NavLink
             to="/contact"
             className={({ isActive }) =>
